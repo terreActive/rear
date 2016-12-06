@@ -1,1 +1,12 @@
-../../COPYING
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Relax-and-Recover
+Upstream-Contact: rear-devel@lists.relax-and-recover.org
+Source: https://github.com/rear/rear
+
+Files: *
+Copyright: 2006-2016, Schlomo Schapiro
+           2006-2016, Gratien Dhaese, IT3 Consultants
+           2006-2016, Johannes Meixner, SUSE
+           2006-2016, Jeroen Hoekx
+           2006-2016, Dag Wieers, Dagit Linux Solutions
+License: GPL-3
