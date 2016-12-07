@@ -9,7 +9,7 @@ Standards-Version: 3.9.8
 Package: rear
 Architecture: any
 Provides: rear
-Depends: ethtool, ${shlibs:Depends}, lsb-release, xorriso, iproute, iputils-ping, isolinux (>= 3:6) | syslinux, dosfstools, parted, openssl, awk, attr, ${misc:Depends}
+Depends: ethtool, ${shlibs:Depends}, lsb-release, xorriso, iproute, iputils-ping, isolinux (>= 3:6) | syslinux, dosfstools, parted, openssl, attr, ${misc:Depends}
 Recommends: nfs-client, portmap
 Description: Relax-and-Recover is a bare metal disaster recovery and system
  migration framework. See http://relax-and-recover.org/ for all the details.
