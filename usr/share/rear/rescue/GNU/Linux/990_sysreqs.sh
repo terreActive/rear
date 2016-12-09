@@ -101,7 +101,7 @@ done
 
 echo "  Default route:"
 # default route
-ip route show | grep default | cut -d' ' -f3 | sed -e "s/^/    /"
+ip route show table all | grep ^default | cut -d' ' -f3 | uniq | sed -e "s/^/    /"
 echo
 
 } >$VAR_DIR/sysreqs/Minimal_System_Requirements.txt
