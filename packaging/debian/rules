@@ -2,8 +2,22 @@
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
+ifeq ($(DEB_HOST_ARCH),amd64)
+	MACHINE=i386
+	REAL_MACHINE=x86_64
+else
+	MACHINE=$(DEB_HOST_ARCH)
+	REAL_MACHINE=$(DEB_HOST_ARCH)
+endif
+
 %:
 	dh $@
+
+override_dh_auto_install:
+	dh_auto_install
+	find debian -name 'Linux-*' -a \! -name 'Linux-$(MACHINE)*' -ls -exec rm -rf {} \; || true
+	find debian -name "SUSE_LINUX*" -exec rm -rf {} \; || true
+	find debian -name "Fedora" -exec rm -rf {} \; || true
 
 override_dh_installdocs:
 	dh_installdocs -XMakefile
