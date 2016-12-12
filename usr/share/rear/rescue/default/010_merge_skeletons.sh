@@ -12,7 +12,7 @@ for dir in default "$ARCH" "$OS" \
 		"$OS_VENDOR/default" "$OS_VENDOR_ARCH" "$OS_VENDOR_VERSION" \
 		"$BACKUP" "$OUTPUT" ; do
 	if test -z "$dir" ; then
-		# silently skip if $dir it empty, e.g. if OS_MASTER_* is empty
+		# silently skip if $dir is empty, e.g. if OS_MASTER_* is empty
 		continue
 	elif test -s "$dir".tar.gz ; then
 		Log "Adding '$dir.tar.gz'"
