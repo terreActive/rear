@@ -9,7 +9,7 @@ Vcs-Browser: https://github.com/rear/rear
 
 Package: rear
 Architecture: i386 ia64 amd64 ppc64el
-Depends: ${shlibs:Depends}, ${misc:Depends}, ethtool, lsb-release, xorriso | genisoimage | mkisofs, iproute2 | iproute, ping, dosfstools, parted, openssl, attr, syslinux [!ppc64el]
+Depends: ${shlibs:Depends}, ${misc:Depends}, ethtool, lsb-release, xorriso | genisoimage | mkisofs, iproute2 | iproute, iputils-ping | ping, dosfstools, parted, openssl, attr, syslinux [!ppc64el]
 Recommends: nfs-client, portmap, isolinux
 Description: Bare metal disaster recovery and system migration framework
  Relax-and-Recover is the leading Open Source bare metal disaster recovery and
