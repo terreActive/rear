@@ -96,16 +96,13 @@ doc:
 
 ifneq ($(git_date),)
 rewrite:
-	@echo -e "\033[1m== Rewriting $(specfile), $(dscfile) and $(rearbin) ==\033[0;0m"
+	@echo -e "\033[1m== Rewriting $(specfile) and $(rearbin) ==\033[0;0m"
 	sed -i.orig \
 		-e 's#^Source:.*#Source: https://sourceforge.net/projects/rear/files/rear/${version}/$(name)-${distversion}.tar.gz#' \
 		-e 's#^Version:.*#Version: $(version)#' \
 		-e 's#^%define rpmrelease.*#%define rpmrelease $(rpmrelease)#' \
 		-e 's#^%setup.*#%setup -q -n $(name)-$(distversion)#' \
 		$(specfile)
-	sed -i.orig \
-		-e 's#^Version:.*#Version: $(version)-$(debrelease)#' \
-		$(dscfile)
 	sed -i.orig \
 		-e 's#^readonly VERSION=.*#readonly VERSION=$(distversion)#' \
 		-e 's#^readonly RELEASE_DATE=.*#readonly RELEASE_DATE="$(release_date)"#' \
@@ -114,7 +111,6 @@ rewrite:
 restore:
 	@echo -e "\033[1m== Restoring $(specfile) and $(rearbin) ==\033[0;0m"
 	mv -f $(specfile).orig $(specfile)
-	mv -f $(dscfile).orig $(dscfile)
 	mv -f $(rearbin).orig $(rearbin)
 else
 rewrite:
