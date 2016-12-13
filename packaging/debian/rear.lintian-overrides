@@ -1,0 +1,2 @@
+# skel contains empty directories by design
+rear: package-contains-empty-directory usr/share/rear/skel/*
